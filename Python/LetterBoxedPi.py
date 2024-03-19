@@ -20,18 +20,12 @@ wordset = []
 for line in file:
     wordset.append(line.strip())
 
-#from english_words import get_english_words_set
-#wordset = get_english_words_set(['gcide'], lower=True, alpha=True)
-
 set1 = sys.argv[1]
 set2 = sys.argv[2]
 set3 = sys.argv[3]
 set4 = sys.argv[4]
 wordset = sorted(wordset)
 wordset.append("burqa")
-
-if "burqa" in wordset:
-    print("IT IS HERE!!!!!!")
 
 letters = []
 for letter in "abcdefghijklmnopqrstuvwxyz":
@@ -43,9 +37,6 @@ goodwords = []
 for word in wordset:
     if all([i in letters for i in word]) and len(word) > 1:
         goodwords.append(word)
-
-if "burqa" in goodwords:
-    print("IT IS HERE again!!!!!!")
 
 finalwords = []
 
@@ -60,12 +51,7 @@ for word in goodwords:
         continue
     else:
         finalwords.append(word)
-
-if "burqa" in finalwords:
-    print("IT IS HERE for the last time!!!!!!")
-
-#print(finalwords)
-        
+       
 for firstword in finalwords:
     for secondword in finalwords:
         if firstword[-1] == secondword[0]:
